@@ -175,7 +175,7 @@
 
             <!-- header.control-header -->
             <header class="control-header">
-              <h3 class="control-title">Categoria</h3>
+              <h3 class="control-title">Tipos de Copo</h3>
               <small id="glassHelp" class="form-text text-muted control-description">Traz drinks para o copo</small>
             </header><!-- /header.control-header -->
 
@@ -185,8 +185,8 @@
                 <label for="glass" class="text-dark">Selecione o copo</label>
                 <select name="glass" id="glass" class="form-control" aria-describedby="glassHelp" required>
                   <option value="" selected disabled>Selecionar...</option>
-                  <option value="Exemplo Categoria 01">Exemplo Copo 01</option>
-                  <option value="Exemplo Categoria 02">Exemplo Copo 02</option>
+                  <option value="Exemplo Copo 01">Exemplo Copo 01</option>
+                  <option value="Exemplo Copo 02">Exemplo Copo 02</option>
                 </select>
               </div>
               <button id="glassFormBtn" type="button"
@@ -196,6 +196,36 @@
           </article><!-- /article.control-container -->
 
         </div><!-- /div#glassControl.control.control-sel -->
+
+        <!-- div#alcoholicControl.control.control-sel -->
+        <div id="alcoholicControl" class="col-12 col-md-6 col-lg-4 col-xl-3 my-3 control control-sel">
+
+          <!-- article.control-container -->
+          <article class="border rounded p-3 control-container">
+
+            <!-- header.control-header -->
+            <header class="control-header">
+              <h3 class="control-title">Alcoólicos ou não?</h3>
+              <small id="alcoholicHelp" class="form-text text-muted control-description">Traz drinks com ou sem álcool</small>
+            </header><!-- /header.control-header -->
+
+            <!-- form#alcoholicForm.control-form -->
+            <form id="alcoholicForm" action="" method="get" class="mt-3 control-form">
+              <div class="form-group">
+                <label for="alcoholic" class="text-dark">Selecione a opção</label>
+                <select name="alcoholic" id="alcoholic" class="form-control" aria-describedby="alcoholicHelp" required>
+                  <option value="" selected disabled>Selecionar...</option>
+                  <option value="Exemplo Alcoólico 01">Alcoólico</option>
+                  <option value="Exemplo Alcoólico 02">Não Alcoólico</option>
+                </select>
+              </div>
+              <button id="alcoholicFormBtn" type="button"
+                class="btn btn-warning border border-rounded border-dark w-100">Buscar</button>
+            </form><!-- /form.#alcoholicFormcontrol-form -->
+
+          </article><!-- /article.control-container -->
+
+        </div><!-- /div#alcoholicControl.control.control-sel -->
 
       </div><!-- /div#controlsMain.controls-main -->
 
