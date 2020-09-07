@@ -7,6 +7,33 @@
   <title>Fetch API | Drinks</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <style>
+    .result-main {
+      max-height: 21vh;
+      overflow-y: scroll;
+    }
+
+    .result-main::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .result-main::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .result-main::-webkit-scrollbar-track-piece {
+      width: 2px;
+      background: rgba(52, 58, 64, .7);
+      border: 2px solid #f8f9fa;
+    }
+
+    .result-main::-webkit-scrollbar-thumb {
+      width: 4px;
+      background-color: #ffc105;
+      border: 2px solid #ffc105;
+      border-radius: 3px;
+    }
+  </style>
 </head>
 
 <body class="container-fluid px-0">
@@ -270,7 +297,7 @@
 
               <!-- div.result-badges -->
               <div
-                class="d-flex flex-row flex-wrap justify-content-around justify-content-lg-center align-items-center result-badges">
+                class="d-flex flex-row flex-wrap justify-content-center align-items-center result-badges">
                 <span class="badge badge-warning badge-pill m-2 result-badge result-category">Categoria</span>
                 <span class="badge badge-warning badge-pill m-2 result-badge result-alcoholic">Não Alcoólico</span>
               </div><!-- /div.result-badges -->
@@ -285,7 +312,9 @@
               <h4 class="result-instruction-title result-detail-title">Receita</h4>
               <p class="result-detail result-instruction">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Exercitationem similique eaque odit mollitia vitae ut officiis doloremque quia at nisi saepe blanditiis
-                eos reprehenderit iure repellendus, numquam dolorem alias iste!</p>
+                eos reprehenderit iure repellendus, numquam dolorem alias iste! Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Exercitationem similique eaque odit mollitia vitae ut officiis doloremque quia at nisi
+                saepe blanditiis eos reprehenderit iure repellendus, numquam dolorem alias iste!</p>
 
               <h4 class="result-extra-info-title result-detail-title">Informações Extra</h4>
               <ul class="list-unstyled result-detail result-list result-extra-info">
@@ -309,8 +338,8 @@
 
       <!-- footer#resultsFooter.results-footer -->
       <footer id="resultsFooter" class="row results-footer">
-        <button id="resultsFooterCleanBtn" class="btn btn-secondary col-2 m-2">Limpar resultados</button>
-        <button id="resultsFooterRandomDrinkBtn" class="btn btn-warning col-2 m-2 border-dark">Drink Sorteado</button>
+        <button id="resultsFooterCleanBtn" class="btn btn-secondary col-12 col-md-2 mx-0 mx-md-2 my-2">Limpar resultados</button>
+        <button id="resultsFooterRandomDrinkBtn" class="btn btn-warning col-12 col-md-2 mx-0 mx-md-2 my-2 border-dark">Drink Sorteado</button>
       </footer><!-- /footer#resultsFooter.results-footer -->
 
     </session><!-- /session#resultsContainer.results-container -->
