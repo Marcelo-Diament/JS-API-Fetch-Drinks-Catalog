@@ -11,14 +11,20 @@
 
 <body class="container-fluid">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- nav#mainNavbar.main-navbar -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-light main-navbar">
+
     <a class="navbar-brand mx-2" href="#">Drinks | Fetch API</a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- div#navbarBar -->
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
           <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
         </li>
@@ -32,8 +38,10 @@
           <a class="nav-link" href="#">Não Alcoólicos</a>
         </li>
       </ul>
-    </div>
-  </nav>
+
+    </div><!-- /div#navbarBar -->
+
+  </nav><!-- /nav#mainNavbar.main-navbar -->
 
   <!-- main#mainContainer -->
   <main id="mainContainer" class="row">
@@ -263,6 +271,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
   </script><!-- /scripts -->
+
 </body>
 
 </html>
