@@ -74,6 +74,29 @@
           </article>
         </div>
 
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 my-3">
+          <article class="border rounded p-3">
+
+            <header>
+              <h3>Categoria</h3>
+              <small id="categoryHelp" class="form-text text-muted">Traz drinks da categoria</small>
+            </header>
+
+            <form action="" method="get" class="mt-3">
+              <div class="form-group">
+                <label for="category" class="text-dark">Selecione a categoria</label>
+                <select name="category" id="category" class="form-control" aria-describedby="categoryHelp" required>
+                  <option value="" selected disabled>Selecionar...</option>
+                  <option value="Exemplo Categoria 01">Exemplo Categoria 01</option>
+                  <option value="Exemplo Categoria 02">Exemplo Categoria 02</option>
+                </select>
+              </div>
+              <button type="button" class="btn btn-warning border border-rounded border-dark w-100">Buscar</button>
+            </form>
+
+          </article>
+        </div>
+
       </div>
 
     </session><!-- /session#controlssContainer -->
