@@ -167,6 +167,36 @@
 
         </div><!-- /div#firstLetterControl.control.control-txt -->
 
+        <!-- div#glassControl.control.control-sel -->
+        <div id="glassControl" class="col-12 col-md-6 col-lg-4 col-xl-3 my-3 control control-sel">
+
+          <!-- article.control-container -->
+          <article class="border rounded p-3 control-container">
+
+            <!-- header.control-header -->
+            <header class="control-header">
+              <h3 class="control-title">Categoria</h3>
+              <small id="glassHelp" class="form-text text-muted control-description">Traz drinks para o copo</small>
+            </header><!-- /header.control-header -->
+
+            <!-- form#glassForm.control-form -->
+            <form id="glassForm" action="" method="get" class="mt-3 control-form">
+              <div class="form-group">
+                <label for="glass" class="text-dark">Selecione o copo</label>
+                <select name="glass" id="glass" class="form-control" aria-describedby="glassHelp" required>
+                  <option value="" selected disabled>Selecionar...</option>
+                  <option value="Exemplo Categoria 01">Exemplo Copo 01</option>
+                  <option value="Exemplo Categoria 02">Exemplo Copo 02</option>
+                </select>
+              </div>
+              <button id="glassFormBtn" type="button"
+                class="btn btn-warning border border-rounded border-dark w-100">Buscar</button>
+            </form><!-- /form.#glassFormcontrol-form -->
+
+          </article><!-- /article.control-container -->
+
+        </div><!-- /div#glassControl.control.control-sel -->
+
       </div><!-- /div#controlsMain.controls-main -->
 
     </session><!-- /session#controlsContainer.controls-container -->
