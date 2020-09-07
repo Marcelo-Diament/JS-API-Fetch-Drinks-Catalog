@@ -48,6 +48,17 @@ Este repositório é focado no Fetch API especificamente. Portanto, as linguagen
 * Bootstrap (+Popper, JQuery)
 * MarkDown
 
+## Changelog
+
+##### **v0.0.2**
+
+* **README.md**: 'como colaborar' e 'changelog' adicionados
+* **index.html**: HTML inicial estruturado
+
+##### **v0.0.1**
+
+* **README.md**: versão inicial
+
 ## Como eu posso Contribuir?
 
 ##### Pull Request (PR)
@@ -132,6 +143,17 @@ This repository is focused on the Fetch API specifically. Therefore, the languag
 * JSON
 * Bootstrap (+Popper, JQuery)
 * MarkDown
+
+## Changelog
+
+##### **v0.0.2**
+
+* **README.md**: 'how to collaborate' and 'changelog' added
+* **index.html**: initial HTML structured
+
+##### **v0.0.1**
+
+* **README.md**: initial version
 
 ## How Can I Collaborate?
 
