@@ -48,6 +48,26 @@ Este repositório é focado no Fetch API especificamente. Portanto, as linguagen
 * Bootstrap (+Popper, JQuery)
 * MarkDown
 
+## Como eu posso Contribuir?
+
+##### Pull Request (PR)
+
+Você pode fazer um _fork_ do repositório e propor melhorias abrindo Pull Requests (PRs).
+Nos seus comentários (da PR), devem constar - pelo menos - essas informações (em .md - formato markdown):
+
+> **Nome da Branch** 
+> **Objetivo**
+> Numa sentença curta, descreva o objetivo da sua branch/feature.
+> **Solução**
+> Como você solucionou o problema? Como funciona sua proposta?
+> **Dependências**
+> É necessário instalar alguma biblioteca, pacote ou usar algum CDN?
+> **QA**
+> Como eu devo testar sua feature? Que cenários de uso você imaginou?
+> _**Nota importante**: quanto mais específico você for, mais chances da sua PR ser aprovada._
+
+**Dica**: você pode testar e visualizar seu arquivo _markdown_ no site [Dillinger.io][Dillinger.io].
+
 ___
 
 # Obrigado pela visita!
@@ -113,6 +133,26 @@ This repository is focused on the Fetch API specifically. Therefore, the languag
 * Bootstrap (+Popper, JQuery)
 * MarkDown
 
+## How Can I Collaborate?
+
+##### Pull Request (PR)
+
+You can fork this repository and then propose improvements by opening Pull Requests (PRs).
+It's body must contain - at least - those information (in .md - markdown format):
+
+> **Branch Name** 
+> **Goal**
+> In a short sentence, describe what is the branchs aim.
+> **Solution**
+> How did you solved the problem? How does your proposal works?
+> **Dependencies**
+> Is it necessary to install any package or to use any CDN?
+> **QA**
+> How should I test your feature? Which sceneries have you imagined?
+> _**Important note**: the more specific you get, better the chances of your PR to be approved._
+
+**Tip**: you can preview your _markdown_ files in the [Dillinger.io][Dillinger.io] website.
+
 ___
 
 # Thanks for the visit!
@@ -128,6 +168,7 @@ If you want to exchange ideas, experiences and stickers, contact me!
 [Github]: <https://github.com/Marcelo-Diament>
 [LinkedIn]: <https://linkedin.com/in/marcelodiament>
 [Banner topo]: <https://media.gazetadopovo.com.br/bomgourmet/2019/01/capa-coqueteis-floripa-5ec8cb10.jpg>
+[Dillinger.io]: <https://dillinger.io/>
 [Figma]: <https://figma.com>
 [Insomnia]: <https://insomnia.rest/download/#windows>
 [node]: <https://nodejs.org>
