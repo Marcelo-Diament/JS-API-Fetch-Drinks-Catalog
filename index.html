@@ -243,19 +243,22 @@
     <!-- session#resultsContainer.results-container -->
     <session id="resultsContainer" class="bg-light mx-auto my-3 p-4 container results-container">
 
-      <header class="row">
-        <h2 class="col-12">Resultados</h2>
-        <p class="col-12">Veja o que encontramos para sua busca:</p>
-      </header>
+      <!-- header#resultsHeader.results-header -->
+      <header id="resultsHeader" class="row results-header">
+        <h2 class="col-12 results-title">Resultados</h2>
+        <p class="col-12 results-description">Veja o que encontramos para <span id="searchMade">a sua busca</span>:</p>
+      </header><!-- /header#resultsHeader.results-header -->
 
-      <div class="row">
+      <!-- div#resultsMain.results-main -->
+      <div id="resultsMain" class="d-flex flex-row flex-wrap justify-content-start align-items-stretch results-main">
         <h1 class="col-12 text-danger">// RESULTADOS</h1>
-      </div>
+      </div><!-- /div#resultsMain.results-main -->
 
-      <footer class="row">
-        <button class="btn btn-secondary col-2 m-2">Limpar resultados</button>
-        <button class="btn btn-warning col-2 m-2 border-dark">Drink Sorteado</button>
-      </footer>
+      <!-- footer#resultsFooter.results-footer -->
+      <footer id="resultsFooter" class="row results-footer">
+        <button id="resultsFooterCleanBtn" class="btn btn-secondary col-2 m-2">Limpar resultados</button>
+        <button id="resultsFooterRandomDrinkBtn" class="btn btn-warning col-2 m-2 border-dark">Drink Sorteado</button>
+      </footer><!-- /footer#resultsFooter.results-footer -->
 
     </session><!-- /session#resultsContainer.results-container -->
 
