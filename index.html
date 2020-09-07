@@ -35,7 +35,8 @@
     </div>
   </nav>
 
-  <main class="row">
+  <!-- main#mainContainer -->
+  <main id="mainContainer" class="row">
 
     <!-- header#mainHeader -->
     <header id="mainHeader" class="col-12 my-5 row">
@@ -44,45 +45,61 @@
         mais.</p>
     </header><!-- /header#mainHeader -->
 
-    <!-- session#controlssContainer -->
-    <session id="controlsContainer" class="bg-light mx-auto my-3 p-4 container">
+    <!-- session#controlsContainer.controls-container -->
+    <session id="controlsContainer" class="bg-light mx-auto my-3 p-4 container controls-container">
 
-      <header class="row">
-        <h2 class="col-12">Buscar Drinks por...</h2>
-        <p class="col-12">Selecione o tipo de busca desejado e navegue pelas receitas dos drinks encontrados.</p>
-      </header>
+      <!-- header#controlsHeader.controls-header -->
+      <header id="controlsHeader" class="row controls-header">
+        <h2 class="col-12 controls-title">Buscar Drinks por...</h2>
+        <p class="col-12 controls-description">Selecione o tipo de busca desejado e navegue pelas receitas dos drinks
+          encontrados.</p>
+      </header><!-- /header#controlsHeader.controls-header -->
 
-      <div class="row">
+      <!-- div#controlsMain.controls-main -->
+      <div id="controlsMain" class="row controls-main">
 
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 my-3">
-          <article class="border rounded p-3">
+        <!-- div#nameControl.control.control-txt -->
+        <div id="nameControl" class="col-12 col-md-6 col-lg-4 col-xl-3 my-3 control control-txt">
 
-            <header>
-              <h3>Nome</h3>
-              <small id="nameHelp" class="form-text text-muted">Traz drinks com nome igual ou similar</small>
-            </header>
+          <!-- article.control-container -->
+          <article class="border rounded p-3 control-container">
 
-            <form action="" method="get" class="mt-3">
+            <!-- header.control-header -->
+            <header class="control-header">
+              <h3 class="control-title">Nome</h3>
+              <small id="nameHelp" class="form-text text-muted control-description">Traz drinks com nome igual ou
+                similar</small>
+            </header><!-- /header.control-header -->
+
+            <!-- form#nameForm.control-form -->
+            <form id="nameForm" action="" method="get" class="mt-3 control-form">
               <div class="form-group">
                 <label for="name" class="text-dark">Insira o nome</label>
                 <input type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Caipirinha"
                   required>
               </div>
-              <button type="button" class="btn btn-warning border border-rounded border-dark w-100">Buscar</button>
-            </form>
+              <button id="nameFormBtn" type="button"
+                class="btn btn-warning border border-rounded border-dark w-100">Buscar</button>
+            </form><!-- /form#nameForm.control-form -->
 
-          </article>
-        </div>
+          </article><!-- /article.control-container -->
 
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 my-3">
-          <article class="border rounded p-3">
+        </div><!-- /div#nameControl.control.control-txt -->
 
-            <header>
-              <h3>Categoria</h3>
-              <small id="categoryHelp" class="form-text text-muted">Traz drinks da categoria</small>
-            </header>
+        <!-- div#categoryControl.control.control-sel -->
+        <div id="categoryControl" class="col-12 col-md-6 col-lg-4 col-xl-3 my-3 control control-sel">
 
-            <form action="" method="get" class="mt-3">
+          <!-- article.control-container -->
+          <article class="border rounded p-3 control-container">
+
+            <!-- header.control-header -->
+            <header class="control-header">
+              <h3 class="control-title">Categoria</h3>
+              <small id="categoryHelp" class="form-text text-muted control-description">Traz drinks da categoria</small>
+            </header><!-- /header.control-header -->
+
+            <!-- form#categoryForm.control-form -->
+            <form id="categoryForm" action="" method="get" class="mt-3 control-form">
               <div class="form-group">
                 <label for="category" class="text-dark">Selecione a categoria</label>
                 <select name="category" id="category" class="form-control" aria-describedby="categoryHelp" required>
@@ -91,33 +108,43 @@
                   <option value="Exemplo Categoria 02">Exemplo Categoria 02</option>
                 </select>
               </div>
-              <button type="button" class="btn btn-warning border border-rounded border-dark w-100">Buscar</button>
-            </form>
+              <button id="categoryFormBtn" type="button"
+                class="btn btn-warning border border-rounded border-dark w-100">Buscar</button>
+            </form><!-- /form.#categoryFormcontrol-form -->
 
-          </article>
-        </div>
+          </article><!-- /article.control-container -->
 
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3 my-3">
-          <article class="border rounded p-3">
+        </div><!-- /div#categoryControl.control.control-sel -->
 
-            <header>
-              <h3>Randômico</h3>
-              <small id="categoryHelp" class="form-text text-muted">Traz um drink aleatoriamente</small>
-            </header>
+        <!-- div#randomControl.control.control-btn -->
+        <div id="randomControl" class="col-12 col-md-6 col-lg-4 col-xl-3 my-3 control control-btn">
 
-            <form action="" method="get" class="mt-3">
-              <button type="button" class="btn btn-warning border border-rounded border-dark w-100">Buscar</button>
-            </form>
+          <!-- article.control-container -->
+          <article class="border rounded p-3 control-container">
 
-          </article>
-        </div>
+            <!-- header.control-header -->
+            <header class="control-header">
+              <h3 class="control-title">Randômico</h3>
+              <small id="randomHelp" class="form-text text-muted control-description">Traz um drink
+                aleatoriamente</small>
+            </header><!-- /header.control-header -->
 
-      </div>
+            <!-- form#randomForm.control-form -->
+            <form id="randomForm" action="" method="get" class="mt-3 control-form">
+              <button id="randomFormBtn" type="button"
+                class="btn btn-warning border border-rounded border-dark w-100">Buscar</button>
+            </form><!-- /form.#randomFormcontrol-form -->
 
-    </session><!-- /session#controlssContainer -->
+          </article><!-- /article.control-container -->
 
-    <!-- session#resultsContainer -->
-    <session id="resultsContainer" class="bg-light mx-auto my-3 p-4 container">
+        </div><!-- /div#randomControl.control.control-btn -->
+
+      </div><!-- /div#controlsMain.controls-main -->
+
+    </session><!-- /session#controlsContainer.controls-container -->
+
+    <!-- session#resultsContainer.results-container -->
+    <session id="resultsContainer" class="bg-light mx-auto my-3 p-4 container results-container">
 
       <header class="row">
         <h2 class="col-12">Resultados</h2>
@@ -133,10 +160,11 @@
         <button class="btn btn-warning col-2 m-2 border-dark">Drink Sorteado</button>
       </footer>
 
-    </session><!-- /session#resultsContainer -->
+    </session><!-- /session#resultsContainer.results-container -->
 
-  </main>
+  </main><!-- /main#mainContainer -->
 
+  <!-- scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>
@@ -145,7 +173,7 @@
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-  </script>
+  </script><!-- /scripts -->
 </body>
 
 </html>
