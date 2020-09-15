@@ -95,27 +95,10 @@ window.onload = () => {
       }
 
       for (validator of validators) {
-
-        if (debug) {
-          console.groupCollapsed(`%c${validator[0]}`, 'font-size:10px;font-weight:bold;');
-          console.log(`%cnewStr Pre: %c${newStr}`, 'font-size:10px;font-weight:bold;', 'color:orange;font-weight:bold;');
-        }
-
-        if (type === 'class') { newStr = newStr.toLowerCase() };
+        if (type === 'class') { newStr = newStr.toLowerCase(); };
         newStr = newStr.replace(validator[0], validator[1]);
-        if (type === 'class') { newStr = newStr.toLowerCase() };
-
-        if (debug) {
-          console.log(`%cvalidator: %c${validator[0]} => ${validator[1]}`, 'font-size:10px;font-weight:bold;', 'color:orange;font-weight:bold;');
-          console.log(`%ctype: %c${type}`, 'font-size:10px;font-weight:bold;', 'color:orange;font-weight:bold;');
-          console.log(`%cnewStr Pos: %c${newStr}`, 'font-size:10px;font-weight:bold;', 'color:orange;font-weight:bold;');
-          console.groupEnd();
-        }
-
+        if (type === 'class') { newStr = newStr.toLowerCase(); };
       }
-
-      debug && console.log(`%cinput: %c${originalStr}%c\noutput: %c${newStr}`, 'font-size:10px;font-weight:bold;', 'color:darkorange;font-weight:bold;', 'font-size:10px;font-weight:bold;', 'color:cyan;font-weight:bold;');
-
       return newStr;
     }
 
