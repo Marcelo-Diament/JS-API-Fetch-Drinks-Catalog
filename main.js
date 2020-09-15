@@ -429,6 +429,13 @@ window.onload = () => {
     }
     getDrinksCategoryOptions();
 
+    getDrinksGlassOptions = () => {
+      let url = setQueryParams('glassList', true);
+      localStorage.setItem('subjectSearch', `lista de tipos de copos`);
+      getOptions(url);
+    }
+    getDrinksGlassOptions();
+
     storeData('init');
   };
   init();
