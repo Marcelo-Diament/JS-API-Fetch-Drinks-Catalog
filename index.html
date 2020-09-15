@@ -197,7 +197,7 @@
                 <input type="text" class="form-control" id="firstLetter" aria-describedby="firstLetterHelp"
                   placeholder="A" required>
               </div>
-              <button id="firstLetterFormBtn" type="button"
+              <button id="firstLetterFormBtn" type="button" onclick="getDrinksByFirstLetter(document.querySelector('#firstLetter').value)"
                 class="btn btn-warning border border-rounded border-dark w-100">Buscar</button>
             </form><!-- /form#firstLetterForm.control-form -->
 
