@@ -217,7 +217,7 @@ window.onload = () => {
       }
     }
 
-    const resultadosDrinksMain = document.querySelector('#drinksResultsMain');
+    const resultadosDrinksMain = document.querySelector('#resultsContainer');
     limparResultadosDrinks = () => resultadosDrinksMain.innerHTML = '';
 
     const makeDrinkHtml = ({ idDrink, strAlcoholic, strCategory, strDrink, strDrinkThumb, strGlass, strInstructions }, unique = false) => {
@@ -438,6 +438,44 @@ window.onload = () => {
       getOptions(url);
     }
     getDrinksGlassOptions();
+
+    const getDrinks = url => {
+      return fetch(url)
+        .catch(err => console.log(err))
+        .then(res => res.json())
+        .then(json => {
+
+          let drinksResults = document.querySelector('#resultsMain');
+          scrollTo(0, drinksResults.offsetTop);
+
+          let response = /random/.test(url) ? json.drinks[0] : json.drinks;
+          dataStored.drinks = response;
+
+          for (param in dataStored.queryParams) {
+            dataStored.queryParams[param] === true || dataStored.queryParams[param] === false
+              ? dataStored.queryParams[param] = false
+              : dataStored.queryParams[param] === '';
+          };
+
+          storeData('update');
+          return response;
+        })
+        .then(drinks => {
+          limparResultadosDrinks();
+          if (drinks.length > 1) {
+            for (drink of drinks) {
+              makeDrinkHtml(drink);
+            };
+          } else if (drinks.length === 1) {
+            makeDrinkHtml(drinks[0], true);
+          } else if (drinks.length === undefined) {
+            makeDrinkHtml(drinks, true);
+          } else {
+            makeDrinkHtml(drinks);
+          }
+          return drinks;
+        });
+    }
 
     storeData();
   };
