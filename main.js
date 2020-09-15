@@ -367,6 +367,61 @@ window.onload = () => {
       return url;
     }
 
+    const getOptions = url => {
+      return fetch(url)
+        .catch(err => console.log(err))
+        .then(res => res.json())
+        .then(json => {
+
+          let response = JSON.stringify(json.drinks);
+
+          switch (true) {
+            case /c=list/.test(url):
+              storeData.lists.categories = response;
+              for (item of json.drinks) {
+                let optionItem = document.createElement('OPTION');
+                optionItem.setAttribute('value', item.strCategory);
+                optionItemText = document.createTextNode(item.strCategory);
+                optionItem.appendChild(optionItemText);
+                document.querySelector('#drinksByCategoryInput').appendChild(optionItem)
+              }
+              break;
+            case /g=list/.test(url):
+              storeData.lists.glasses = response;
+              for (item of json.drinks) {
+                let optionItem = document.createElement('OPTION');
+                optionItem.setAttribute('value', item.strGlass);
+                optionItemText = document.createTextNode(item.strGlass);
+                optionItem.appendChild(optionItemText);
+                document.querySelector('#drinksByGlassInput').appendChild(optionItem)
+              }
+              break;
+            case /a=list/.test(url):
+              storeData.lists.alcoholic = response;
+              for (item of json.drinks) {
+                let optionItem = document.createElement('OPTION');
+                optionItem.setAttribute('value', item.strAlcoholic);
+                optionItemText = document.createTextNode(item.strAlcoholic);
+                optionItem.appendChild(optionItemText);
+                document.querySelector('#drinksByAlcoholicInput').appendChild(optionItem)
+              }
+              break;
+            default:
+              return;
+          }
+
+          store('update')
+          return response;
+        })
+    }
+
+    getDrinksAlcoholicOptions = () => {
+      let url = setQueryParams('alcoholicList', true);
+      localStorage.setItem('subjectSearch', `lista de classificação em termos de álcool`);
+      getOptions(url);
+    }
+    getDrinksAlcoholicOptions();
+
     storeData('init');
   };
   init();
