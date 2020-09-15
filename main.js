@@ -478,6 +478,12 @@ window.onload = () => {
       getDrinks(url);
     }
 
+    getDrinksByGlass = (option = 'Shot glass') => {
+      let url = setQueryParams('glass', option);
+      localStorage.setItem('subjectSearch', `drinks por tipo de copo \'${option}\'`);
+      getDrinks(url);
+    }
+
     storeData();
   };
 
