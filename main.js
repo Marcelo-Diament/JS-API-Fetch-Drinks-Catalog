@@ -484,6 +484,13 @@ window.onload = () => {
       getDrinks(url);
     }
 
+    getRandomDrink = () => {
+      let url = setQueryParams('', '');
+      // makeComment('getting a random drink...', url, 'yellow', 'black');
+      localStorage.setItem('subjectSearch', `drink randômico`);
+      getDrinks(url);
+    }
+
     storeData();
   };
 
