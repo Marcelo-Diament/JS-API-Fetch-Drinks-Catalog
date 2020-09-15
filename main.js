@@ -466,6 +466,12 @@ window.onload = () => {
       getDrinks(url);
     }
 
+    getDrinksByFirstLetter = (firstLetter = 'A') => {
+      let url = setQueryParams('firstLetter', firstLetter);
+      localStorage.setItem('subjectSearch', `drinks com começam com \'${firstLetter}\'`);
+      getDrinks(url);
+    }
+
     storeData();
   };
 
