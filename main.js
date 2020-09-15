@@ -350,6 +350,23 @@ window.onload = () => {
       return resultantUrl;
     }
 
+    const setQueryParams = (type, params) => {
+      for (param in queryParamsData) {
+        if (param === type) {
+          queryParamsData[param] = params;
+          storeData.queryParams = queryParamsData;
+          store('update');
+        } else {
+          queryParamsData[param] === true || queryParamsData[param] === false
+            ? queryParamsData[param] = false
+            : queryParamsData[param] = '';
+        }
+      }
+      let url = setUrl(queryParamsData);
+
+      return url;
+    }
+
     storeData('init');
   };
   init();
