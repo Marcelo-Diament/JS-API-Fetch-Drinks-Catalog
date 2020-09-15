@@ -9,6 +9,27 @@ window.onload = () => {
     debug = true;
 
     /**
+     * @function isEmpty
+     * Checks if an item is empty (true) or not (false)
+     * @param {any} item - parâmetro a ser analisado
+     * @returns true|false
+     */
+    isEmpty = item => {
+      let result = true;
+      if (
+        item !== undefined
+        && item !== ''
+        && item !== null
+        && ((Number.isInteger(item) && item >= 0) || item.length > 0)) {
+        result = false;
+      } else {
+        let itemStr = JSON.stringify(item)
+        result = itemStr !== undefined && itemStr.replace(/{|}|\[|\]|"|'|`|null/g, '').length > 0 ? false : true
+      }
+      return result;
+    }
+
+    /**
      * @function sanitizeStr
      * Returns sanitized and formatted string according to the second passed argument
      * 
@@ -246,6 +267,87 @@ window.onload = () => {
         </article>
       `;
       resultadosDrinksMain.innerHTML += html;
+    }
+
+    const setUrl = (q = storeData.queryParams) => {
+
+      let argument = [];
+      argument = [];
+      for (arg in q) {
+        if (!isEmpty(q[arg]) && q[arg] !== false)
+          argument = [arg, q[arg]];
+      }
+
+      let urlData = {
+        base: 'https://www.thecocktaildb.com/api/json/v1/1/',
+        filterBase: 'filter.php?',
+        lookupBase: 'lookup.php?',
+        searchBase: 'search.php?',
+        listBase: 'list.php?',
+        randomBase: 'random.php',
+
+        alcoholicQuery: q.alcoholic ? `a=${q.alcoholic}` : '',
+        categoryQuery: q.category ? `c=${q.category}` : '',
+        glassQuery: q.glass ? `g=${q.glass}` : '',
+        ingredientQuery: q.ingredient ? `i=${q.ingredient}` : '',
+
+        ingredientIdQuery: q.ingredientId ? `iid=${q.ingredientId}` : '',
+        drinkIdQuery: q.drinkId ? `?i=${q.drinkId}` : '',
+
+        alcoholicListQuery: q.alcoholicList ? 'a=list' : '',
+        categoryListQuery: q.categoryList ? 'c=list' : '',
+        glassListQuery: q.glassList ? 'g=list' : '',
+
+        firstLetter: q.firstLetter ? `f=${q.firstLetter}` : '',
+        nameSearch: q.nameSearch ? `s=${q.nameSearch}` : '',
+      };
+
+      let resultantUrl = '';
+      let urlBaseType = '';
+      let urlQueries = '';
+      let queryType = '';
+
+      switch (true) {
+        case argument[0] === 'alcoholicList':
+        case argument[0] === 'categoryList':
+        case argument[0] === 'glassList':
+          urlBaseType = urlData.listBase;
+          queryType = 'list';
+          urlQueries = urlData[argument[0] + 'Query'];
+          break;
+        case argument[0] === 'alcoholic':
+        case argument[0] === 'category':
+        case argument[0] === 'glass':
+          urlBaseType = urlData.filterBase;
+          queryType = 'filter';
+          urlQueries = urlData[argument[0] + 'Query'];
+          break;
+        case argument[0] === 'nameSearch':
+        case argument[0] === 'firstLetter':
+        case argument[0] === 'ingredient':
+          urlBaseType = urlData.searchBase;
+          queryType = 'search';
+          urlQueries = argument[0] === 'ingredient' ? urlData[argument[0] + 'Query'] : urlData[argument[0]];
+          break;
+        case argument[0] === 'drinkId':
+        case argument[0] === 'ingredientId':
+          urlBaseType = urlData.lookupBase;
+          queryType = 'lookup';
+          urlQueries = urlData[argument[0] + 'Query'];
+          break;
+        case argument[1] === null:
+        case argument[1] === undefined:
+        case argument[1] === '':
+        case argument[1] === false:
+        default:
+          urlBaseType = urlData.randomBase;
+          break;
+
+      }
+
+      resultantUrl = urlData.base + urlBaseType + urlQueries;
+
+      return resultantUrl;
     }
 
     storeData('init');
