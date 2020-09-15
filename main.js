@@ -180,6 +180,9 @@ window.onload = () => {
           localStorage.setItem('dataTemp', '');
           dataStored = dataModels;
           dataTemp = ''; return dataStored ? dataStored : localStorage.dataStored ? localStorage.dataStored : console.log('localStorage init | error');
+        case k === 'update':
+          localStorage.setItem('dataStored', JSON.stringify(dataStored));
+          return localStorage.getItem('dataStored');
         case k === undefined:
         case k === 'all':
           return dataStored;
@@ -269,7 +272,7 @@ window.onload = () => {
       resultadosDrinksMain.innerHTML += html;
     }
 
-    const setUrl = (q = storeData.queryParams) => {
+    const setUrl = (q = dataStored.queryParams) => {
 
       let argument = [];
       argument = [];
@@ -354,8 +357,8 @@ window.onload = () => {
       for (param in queryParamsData) {
         if (param === type) {
           queryParamsData[param] = params;
-          storeData.queryParams = queryParamsData;
-          store('update');
+          dataStored.queryParams = queryParamsData;
+          storeData('update');
         } else {
           queryParamsData[param] === true || queryParamsData[param] === false
             ? queryParamsData[param] = false
@@ -377,40 +380,40 @@ window.onload = () => {
 
           switch (true) {
             case /c=list/.test(url):
-              storeData.lists.categories = response;
+              dataStored.lists.categories = response;
               for (item of json.drinks) {
                 let optionItem = document.createElement('OPTION');
                 optionItem.setAttribute('value', item.strCategory);
                 optionItemText = document.createTextNode(item.strCategory);
                 optionItem.appendChild(optionItemText);
-                document.querySelector('#drinksByCategoryInput').appendChild(optionItem)
+                document.querySelector('#category').appendChild(optionItem)
               }
               break;
             case /g=list/.test(url):
-              storeData.lists.glasses = response;
+              dataStored.lists.glasses = response;
               for (item of json.drinks) {
                 let optionItem = document.createElement('OPTION');
                 optionItem.setAttribute('value', item.strGlass);
                 optionItemText = document.createTextNode(item.strGlass);
                 optionItem.appendChild(optionItemText);
-                document.querySelector('#drinksByGlassInput').appendChild(optionItem)
+                document.querySelector('#glass').appendChild(optionItem)
               }
               break;
             case /a=list/.test(url):
-              storeData.lists.alcoholic = response;
+              dataStored.lists.alcoholic = response;
               for (item of json.drinks) {
                 let optionItem = document.createElement('OPTION');
                 optionItem.setAttribute('value', item.strAlcoholic);
                 optionItemText = document.createTextNode(item.strAlcoholic);
                 optionItem.appendChild(optionItemText);
-                document.querySelector('#drinksByAlcoholicInput').appendChild(optionItem)
+                document.querySelector('#alcoholic').appendChild(optionItem)
               }
               break;
             default:
               return;
           }
 
-          store('update')
+          storeData('update');
           return response;
         })
     }
@@ -436,8 +439,9 @@ window.onload = () => {
     }
     getDrinksGlassOptions();
 
-    storeData('init');
+    storeData();
   };
+
   init();
 
 }
