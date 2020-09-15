@@ -328,7 +328,6 @@ window.onload = () => {
         default:
           urlBaseType = urlData.randomBase;
           break;
-
       }
 
       resultantUrl = urlData.base + urlBaseType + urlQueries;
@@ -486,8 +485,13 @@ window.onload = () => {
 
     getRandomDrink = () => {
       let url = setQueryParams('', '');
-      // makeComment('getting a random drink...', url, 'yellow', 'black');
       localStorage.setItem('subjectSearch', `drink randômico`);
+      getDrinks(url);
+    }
+
+    getDrinksByAlcoholic = (option = 'Alcoholic') => {
+      let url = setQueryParams('alcoholic', option);
+      localStorage.setItem('subjectSearch', `drinks classificados como \'${option}\' em termos de álcool`);
       getDrinks(url);
     }
 
