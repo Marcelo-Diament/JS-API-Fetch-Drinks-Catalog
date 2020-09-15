@@ -422,6 +422,13 @@ window.onload = () => {
     }
     getDrinksAlcoholicOptions();
 
+    getDrinksCategoryOptions = () => {
+      let url = setQueryParams('categoryList', true);
+      localStorage.setItem('subjectSearch', `lista de categorias de drinks`);
+      getOptions(url);
+    }
+    getDrinksCategoryOptions();
+
     storeData('init');
   };
   init();
