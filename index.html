@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <style>
+    body {
+      scroll-behavior: smooth;
+    }
+
     .result-main {
       max-height: 21vh;
       overflow-y: scroll;
@@ -257,7 +261,8 @@
                   <option value="" selected disabled>Selecionar...</option>
                 </select>
               </div>
-              <button id="alcoholicFormBtn" type="button" onclick="getDrinksByAlcoholic(document.querySelector('#alcoholic').value)"
+              <button id="alcoholicFormBtn" type="button"
+                onclick="getDrinksByAlcoholic(document.querySelector('#alcoholic').value)"
                 class="btn btn-warning border border-rounded border-dark w-100">Buscar</button>
             </form><!-- /form.#alcoholicFormcontrol-form -->
 
