@@ -14,7 +14,7 @@ window.onload = () => {
      * @param {any} item - parâmetro a ser analisado
      * @returns true|false
      */
-    isEmpty = item => {
+    const isEmpty = item => {
       let result = true;
       if (
         item !== undefined
@@ -43,7 +43,7 @@ window.onload = () => {
      * @example sanitizeStr('Aá  34', 'id') // returns 'aa_34'
      * @example sanitizeStr('Aá  34', 'text') // returns 'Aá 34'
      */
-    sanitizeStr = (str, type = 'default') => {
+    const sanitizeStr = (str, type = 'default') => {
 
       let newStr = str,
         originalStr = str,
@@ -171,7 +171,7 @@ window.onload = () => {
     let dataStored = dataModels;
     let dataTemp = undefined;
 
-    storeData = (k = undefined, v = undefined) => {
+    const storeData = (k = undefined, v = undefined) => {
       switch (true) {
         case (k === 'init'):
           localStorage.clear();
@@ -217,8 +217,8 @@ window.onload = () => {
       }
     }
 
-    const resultadosDrinksMain = document.querySelector('#resultsContainer');
-    limparResultadosDrinks = () => resultadosDrinksMain.innerHTML = '';
+    const resultadosDrinksMain = document.querySelector('#resultsMain');
+    const limparResultadosDrinks = () => resultadosDrinksMain.innerHTML = '';
 
     const makeDrinkHtml = ({ idDrink, strAlcoholic, strCategory, strDrink, strDrinkThumb, strGlass, strInstructions }, unique = false) => {
       let uni = (unique !== true) ? 'col-md-6 col-xl-4 not-unique' : 'unique';
@@ -247,12 +247,12 @@ window.onload = () => {
             <hr class="offset-2 col-8 my-4 border-black-50">
             <div class="col-12 drinks-result-content">
               <h4>Receita</h4>
-              <p id="drinkItemInstructions_${clearStr(idDrink)}" class="drinks-result-instruction drinks-result-instruction-${clearStr(idDrink)}">${strInstructions}</p>
+              <p id="drinkItemInstructions_${sanitizeStr(idDrink)}" class="drinks-result-instruction drinks-result-instruction-${sanitizeStr(idDrink)}">${strInstructions}</p>
               <h4>Informações Extra</h4>
               <ul class="list-unstyled">
-                <li>Copo: <span class="drinks-result-item drinks-result-glass glass-${clearStr(strGlass)}">${strGlass}</span></li>
-                <li>Categoria: <span class="drinks-result-item drinks-result-category drinks-result-category-${clearStr(strCategory)}" onclick="getDrinksByCategory('${strCategory}')">${strCategory}</span></li>
-                <li>Álcool: <span class="drinks-result-item drinks-result-alcoholic drinks-result-alcoholic-${clearStr(strAlcoholic)}" onclick="getDrinksByAlcoholic('${strAlcoholic}')">${strAlcoholic}</span></li>
+                <li>Copo: <span class="drinks-result-item drinks-result-glass glass-${sanitizeStr(strGlass)}">${strGlass}</span></li>
+                <li>Categoria: <span class="drinks-result-item drinks-result-category drinks-result-category-${sanitizeStr(strCategory)}" onclick="getDrinksByCategory('${strCategory}')">${strCategory}</span></li>
+                <li>Álcool: <span class="drinks-result-item drinks-result-alcoholic drinks-result-alcoholic-${sanitizeStr(strAlcoholic)}" onclick="getDrinksByAlcoholic('${strAlcoholic}')">${strAlcoholic}</span></li>
               </ul>
             </div>
         `;
@@ -418,21 +418,21 @@ window.onload = () => {
         })
     }
 
-    getDrinksAlcoholicOptions = () => {
+    const getDrinksAlcoholicOptions = () => {
       let url = setQueryParams('alcoholicList', true);
       localStorage.setItem('subjectSearch', `lista de classificação em termos de álcool`);
       getOptions(url);
     }
     getDrinksAlcoholicOptions();
 
-    getDrinksCategoryOptions = () => {
+    const getDrinksCategoryOptions = () => {
       let url = setQueryParams('categoryList', true);
       localStorage.setItem('subjectSearch', `lista de categorias de drinks`);
       getOptions(url);
     }
     getDrinksCategoryOptions();
 
-    getDrinksGlassOptions = () => {
+    const getDrinksGlassOptions = () => {
       let url = setQueryParams('glassList', true);
       localStorage.setItem('subjectSearch', `lista de tipos de copos`);
       getOptions(url);
@@ -475,6 +475,12 @@ window.onload = () => {
           }
           return drinks;
         });
+    }
+
+    getDrinksByName = (name = 'Capirinha') => {
+      let url = setQueryParams('nameSearch', name);
+      localStorage.setItem('subjectSearch', `drinks com nome \'${name}\'`);
+      getDrinks(url);
     }
 
     storeData();

@@ -115,6 +115,7 @@
                   required>
               </div>
               <button id="nameFormBtn" type="button"
+                onclick="getDrinksByName(document.querySelector('#name').value)"
                 class="btn btn-warning border border-rounded border-dark w-100">Buscar</button>
             </form><!-- /form#nameForm.control-form -->
 
@@ -277,7 +278,8 @@
       </header><!-- /header#resultsHeader.results-header -->
 
       <!-- div#resultsMain.results-main -->
-      <div id="resultsMain" class="d-flex flex-row flex-wrap justify-content-start align-items-stretch results-main"></div><!-- /div#resultsMain.results-main -->
+      <div id="resultsMain" class="d-flex flex-row flex-wrap justify-content-start align-items-stretch results-main">
+      </div><!-- /div#resultsMain.results-main -->
 
       <!-- footer#resultsFooter.results-footer -->
       <footer id="resultsFooter" class="row results-footer">
